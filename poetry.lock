@@ -1815,6 +1815,14 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "speech-recognition-fork"
+version = "3.8.1.2020.12.6"
+description = "Library for performing speech recognition, with support for several engines and APIs, online and offline."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "vosk"
 version = "0.3.15"
 description = "Offline open source speech recognition API based on Kaldi and Vosk"
@@ -1825,7 +1833,7 @@ python-versions = ">=3.5"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "0ff7fc3f541b0d2d5dcf5da0bdaee6579d3eb8da4a7cbf7827250592de0e7c23"
+content-hash = "8cdd2c57b7b23a14f02ccb41eb106e01af3f244a9d6715bfe3f456901cc01877"
 
 [metadata.files]
 comtypes = [
@@ -2496,6 +2504,9 @@ pywin32 = [
     {file = "pywin32-300-cp38-cp38-win_amd64.whl", hash = "sha256:60a8fa361091b2eea27f15718f8eb7f9297e8d51b54dbc4f55f3d238093d5190"},
     {file = "pywin32-300-cp39-cp39-win32.whl", hash = "sha256:638b68eea5cfc8def537e43e9554747f8dee786b090e47ead94bfdafdb0f2f50"},
     {file = "pywin32-300-cp39-cp39-win_amd64.whl", hash = "sha256:b1609ce9bd5c411b81f941b246d683d6508992093203d4eb7f278f4ed1085c3f"},
+]
+speech-recognition-fork = [
+    {file = "speech_recognition_fork-3.8.1.2020.12.6-py2.py3-none-any.whl", hash = "sha256:0a14f39b7dcd8d6c68fde5f14f1286ace7d102269fd6b8ff4ebd1aebde80a523"},
 ]
 vosk = [
     {file = "vosk-0.3.15-cp35-cp35m-manylinux2010_x86_64.whl", hash = "sha256:a99518815c7ca94c295571f90bca06eaa7933829b70baed837b9f9fb07e3c7ef"},

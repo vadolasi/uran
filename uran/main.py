@@ -1,30 +1,30 @@
-import pyaudio
-import pyttsx3
 import json
-from vosk import Model, KaldiRecognizer
+
+import speech_recognition
+import pyttsx3
 
 engine = pyttsx3.init()
 
 
-def speak(text):
+def tts(text: str):
     engine.say(text)
     engine.runAndWait()
 
 
-model = Model('model')
-rec = KaldiRecognizer(model, 16000)
+def stt() -> str:
+    microfone = speech_recognition.Recognizer()
 
-p = pyaudio.PyAudio()
-stream = p.open(
-    format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=8000
-)
-stream.start_stream()
+    with speech_recognition.Microphone() as source:
+        microfone.adjust_for_ambient_noise(source)
+        audio = microfone.listen(source)
+
+    text = json.loads(microfone.recognize_vosk(audio)).get('text')
+
+    if text:
+        return text
+    else:
+        return stt()
+
 
 while True:
-    data = stream.read(8000)
-
-    if rec.AcceptWaveform(data):
-        text = json.loads(rec.Result())['text']
-
-        if text:
-            speak(text)
+    tts(stt())
